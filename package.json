@@ -16,6 +16,8 @@
     "express": "^4.17.1",
     "express-handlebars": "^6.0.2",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.15"
+    "netlify-lambda": "^2.0.15",
+    "nodemon": "^2.0.15",
+    "serverless-http": "^2.7.0"
   }
 }
