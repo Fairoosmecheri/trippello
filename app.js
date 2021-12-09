@@ -45,6 +45,10 @@ app.use("/admin", adminRouter);
 app.use("/user", userRouter);
 app.use("/restuarant", restuarantRouter);
 
+app.get('/', (req, res) => {
+  res.send("HEllo")
+})
+
 app.listen(3000, () => {
   console.log("Server running");
 });
