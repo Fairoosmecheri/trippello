@@ -1,0 +1,190 @@
+{{#if adminLoggedIn}}
+
+<section>
+    <p class="logo">trippello</p>
+    <ul id="menu">
+        <li><a href="/admin">Dashboard</a></li>
+        <li><a href="/admin/own-packages">Own Packages</a></li>
+        <li><a href='/admin/restuarants'>Resturants</a></li>
+        {{!-- <li><a href="#about">About</a></li> --}}
+    </ul>
+
+    <div style="margin-left:18%;height:100vh;">
+        <ol>
+            <li><a class="active" href="/admin/logout">Logout</a></li>
+            {{!-- <li><a href="#news">News</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About</a></li> --}}
+        </ol>
+        <div class="admin-body">
+            {{{body}}}
+
+        </div>
+
+    </div>
+
+</section>
+{{else}}
+{{{body}}}
+{{/if}}
+
+<style>
+    .admin-body {
+        padding-top: 80px;
+        padding-right: 30px;
+        padding-left: 30px;
+        height: 100%;
+        background-color: #F9FAFB;
+    }
+
+    .logo {
+        height: 30px;
+        width: 30px;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 100;
+        font-weight: bold;
+        font-size: xx-large;
+    }
+
+    ul {
+        list-style-type: none;
+        margin-top: 0;
+        padding: 0;
+        width: 18%;
+        background-color: #ffffff;
+        position: fixed;
+        height: 100%;
+        overflow: auto;
+        box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.19);
+
+    }
+
+    li a {
+        display: block;
+        color: #000;
+        padding: 8px 16px;
+        text-decoration: none;
+    }
+
+    ul li:first-child {
+        margin-top: 80px;
+    }
+
+    li.active {
+        background-color: #04AA6D;
+        color: white;
+    }
+
+    li.active a {
+        color: white;
+    }
+
+    li:hover:not(.active) {
+        background-color: #555;
+        color: white;
+    }
+
+    li a:hover {
+        color: white;
+    }
+
+    ol {
+        list-style-type: none;
+        margin: 0;
+        padding-top: 10;
+        position: fixed;
+        width: 82vw;
+        overflow: hidden;
+        background-color: #ffffff;
+        box-shadow: 0 1px 1px 0 rgba(110, 110, 110, 0.2), 0 1px 1px 0 rgba(168, 166, 166, 0.19);
+
+    }
+
+    ol li {
+        float: right;
+    }
+
+    ol li a {
+        display: block;
+        color: black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    ol li a:hover {
+        background-color: #111;
+    }
+</style>
+
+<script>
+    $("#menu li a").click(function () {
+        $(this).parent().addClass('active').siblings().removeClass('active');
+    });
+</script>
+
+
+{{!-- {{#if adminLoggedIn}}
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light px-10">
+
+        <a class="navbar-brand" href="#">Trippello</a>
+
+        <div class="ml-auto" id="navbarTogglerDemo03">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/view-orders">All Orders</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">All Users</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/logout">Logout</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </nav>
+</header>
+{{/if}}
+{{#if adminLoggedIn}}
+<section class="admin-home">
+
+    <div class="col-md-2 admin-menu">
+        <a href="/admin/">Product</a>
+        <a href="/admin/view-category">Category</a>
+        <a href="/admin/view-brands">Brands</a>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+    </div>
+    {{{body}}}
+</section>
+{{else}}
+{{{body}}}
+{{/if}}
+
+<style>
+    .admin-home {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .admin-menu {
+        height: 100vh;
+        width: 18%;
+        background-color: rgb(236, 236, 236);
+        display: flex;
+        flex-direction: column;
+    }
+</style> --}}

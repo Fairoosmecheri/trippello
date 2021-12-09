@@ -1,0 +1,37 @@
+<div>
+    <h5>Add Restuarant</h5>
+    <div class="add-rest-form">
+        <form action="/admin/add-restuarant" method="POST">
+            {{#if loginErr}}
+            <p class="alert alert-danger">Email already exists</p>
+            {{/if}}
+            {{#if mailError}}
+            <p class="alert alert-danger">Mail Service Error</p>
+            {{/if}}
+            <div class="form-group my-2">
+                <label>Restuarant Name</label>
+                <input type="text" class="form-control" name="name" placeholder="Enter Restuarant name">
+            </div>
+
+            <div class="form-group my-2">
+                <label>Email Address</label>
+                <input type="email" class="form-control" name="email" placeholder="Enter Email">
+            </div>
+
+            <button type="submit" class="btn btn-success">Add Restuarant</button>
+        </form>
+    </div>
+</div>
+
+<style>
+    .add-rest-form {
+        width: 50%;
+        margin-right: auto;
+    }
+    .btn {
+        padding-left: 50px;
+        padding-right: 50px;
+        float: right;
+        margin-top: 10px;
+    }
+</style>

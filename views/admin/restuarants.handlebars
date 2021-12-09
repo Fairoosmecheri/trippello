@@ -1,0 +1,68 @@
+<div>
+    <h5>Restuarants</h5>
+    <div class="search-add-container">
+        <input type="text" placeholder="Search by Restuarant name">
+        <a class="btn btn-success" href="/admin/add-restuarant">+ Add Restuarant</a>
+    </div>
+    <div class="table-container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Restuarant Name</th>
+                    <th>Email</th>
+                    <th>Place</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each restuarants}}
+                <tr>
+                    <td>{{this.name}}</td>
+                    <td>{{this.email}}</td>
+                    <td>{{this.place}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<style>
+    .search-add-container {
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 2px 6px 0 rgba(119, 117, 117, 0.19);
+        padding: 20px 20px;
+        margin-top: 30px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .search-add-container input {
+        padding: 10px;
+        width: 400px;
+        border-radius: 5px;
+        border: 1px solid #dbdbdb;
+        background-color: #F4F5F7;
+        outline: none;
+    }
+
+    .search-add-container input:focus {
+        background-color: white;
+    }
+
+    .search-add-container a {
+        padding: 15px 40px;
+        border-radius: 5px;
+    }
+
+    .table-container {
+        border-radius: 5px;
+        margin-top: 20px;
+        background-color: white;
+        box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 2px 6px 0 rgba(119, 117, 117, 0.19);
+
+    }
+</style>

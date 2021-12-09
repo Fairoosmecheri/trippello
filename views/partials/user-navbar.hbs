@@ -1,0 +1,90 @@
+<header>
+    <div class="user-navbar d-flex justify-content-center">
+        <div class="user-navbar-title">
+            SNEAKER SHELF
+        </div>
+        <div class="user-navbar-items">
+            <a href="/" class="navbar-items">Home</a>
+            <a href="/cart" class="navbar-items">Cart <span class="badge badge-cart" id="cart-count">{{cartCount}}</span></a>
+            <a href="/orders" class="navbar-items">Orders</a>
+
+            <div class="dropdown navbar-items">
+                <button class="dropdown-toggle btn btn-drop" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    {{#if user}}
+                    {{user.Name}}
+                    {{else}}
+                    Account
+                    {{/if}}
+
+
+                </button>
+                <div class="dropdown-menu menu-drop">
+                    {{#if user}}
+                    <a class="dropdown-item" href="/logout">Logout</a>
+                    {{else}}
+                    <a class="dropdown-item" href="/login">Login</a>
+                    {{/if}}
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</header>
+
+<style>
+    .badge-cart {
+        background-color: black;
+        color: white;
+        padding: 4px;
+    }
+    .user-navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 20px;
+    }
+
+    .user-navbar-title {
+        padding-top: 0rem;
+        color: black;
+        font-weight: 900;
+        font-size: 3em;
+    }
+
+    body {
+        background-color: rgba(241, 239, 239, 0.911);
+    }
+
+    .user-navbar-items {
+        display: flex;
+        flex-direction: row;
+        align-items: center ;
+        font-weight: 500;
+        font-size: large;
+    }
+
+    .navbar-items {
+        
+        padding: 0 10px;
+        margin: 0 5px;
+        cursor: pointer;
+    }
+    .btn-drop {
+        background-color: black;
+        color: white;
+    }
+    .menu-drop {
+        width: 1em;
+    }
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    a:hover {
+        text-decoration: none;
+        color: black;
+    }
+    
+</style>
